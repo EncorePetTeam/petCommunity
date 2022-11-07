@@ -1,4 +1,4 @@
 package com.encore.pet.community.service.user;
 
-public class DoctorService {
+public interface DoctorService {
 }
