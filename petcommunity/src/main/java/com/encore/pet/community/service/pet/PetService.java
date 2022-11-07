@@ -1,11 +1,9 @@
 package com.encore.pet.community.service.pet;
 
-import com.encore.pet.community.controller.pet.requests.PetDto;
+import com.encore.pet.community.controller.pet.requests.PetRequestDTO;
 
 public interface PetService {
-
-    PetDto registerPet(PetDto petDto);
-    PetDto returnPetDtoById(int petId);
+    PetRequestDTO returnPetDtoById(int petId);
 
 
 }

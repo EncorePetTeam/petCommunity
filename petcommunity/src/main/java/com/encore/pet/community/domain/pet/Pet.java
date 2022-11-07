@@ -36,19 +36,21 @@ public class Pet {
     private Integer age;
 
     @Column(nullable = false)
-    private PetGenderEnum gender;
+    private PetGender gender;
 
     @Column(nullable = false)
-    private PetGenderNeutralEnum neutral;
+    private PetGenderNeutral neutral;
 
     @Builder
-    public Pet(User user, PetCategory petCategory, String petName, Integer age, PetGenderEnum gender) {
+    public Pet(User user, PetCategory petCategory, String petName, Integer age, PetGender gender, PetGenderNeutral petGenderNeutral) {
         this.user = user;
         this.petCategory = petCategory;
         this.petName = petName;
         this.age = age;
         this.gender = gender;
+        this.neutral = petGenderNeutral;
     }
+
 
 
 }
