@@ -26,22 +26,18 @@ import {
     const textColor = useColorModeValue("gray.700", "white");
     const bgColor = useColorModeValue("white", "gray.700");
     const bgIcons = useColorModeValue("teal.200", "rgba(255, 255, 255, 0.5)");
-
+    
     const [result, setResult] = useState([]);
+    // const [surveyList, setSurveyList] = useState([]);
+    const surveyList = ["당신은 산책을 좋아하시나요",
+    "당신은 강아지를 좋아하시나요",
+    "당신은 고양이를 좋아하시나요",
+    "당신은 어쩌구 저쩌구",
+    "그냥한번 물어본거에요~",
+    "너 그리고 나"]
+    // fetch("http://localhost:5000/getsurvey").then((response) => response.json()).then((json)=>setSurveyList(json))
 
-    const getSurvey = () =>{
-        axios({
-            method: "get",
-            url: "http://localhost:8181/getsurvey",
-          })
-          .then((res) => {
-            window.alert(res.data.result);
-            return res;
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-    }
+    console.log(surveyList)
 
     const getSurveyResult = () => { 
       axios({
@@ -59,7 +55,6 @@ import {
         });
     };
 
-    const surveyList = ["첫번째 질문", "두번째 질문", "세번째 질문", "네번째 질문", "다섯번째 질문"]
   
     return (
       <Flex
@@ -122,7 +117,7 @@ import {
                 console.log("실행")
                 console.log(result)
               };
-                
+              
               return(
                 <div> 
                   <div>
@@ -147,7 +142,7 @@ import {
                             checked={radio === "1" ? true : false}
                             onChange={changeRadio}
                           />
-                          1번
+                          매우 아니다
                         </label>
                       </div>
                       <div className="radio">
@@ -159,7 +154,7 @@ import {
                             checked={radio === "2" ? true : false}
                             onChange={changeRadio}
                           />
-                          2번
+                          아니다
                         </label>
                       </div>
                       <div className="radio">
@@ -171,7 +166,7 @@ import {
                             checked={radio === "3" ? true : false}
                             onChange={changeRadio}
                           />
-                          3번
+                          보통이다
                         </label>
                       </div>
                       <div className="radio">
@@ -183,7 +178,7 @@ import {
                             checked={radio === "4" ? true : false}
                             onChange={changeRadio}
                           />
-                          4번
+                          그렇다
                         </label>
                       </div>
                       <div className="radio">
@@ -195,7 +190,7 @@ import {
                             checked={radio === "5" ? true : false}
                             onChange={changeRadio}
                           />
-                          5번
+                          매우 그렇다
                         </label>
                       </div>
                     </form>
