@@ -35,6 +35,7 @@ public class UserController {
     //로그인
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     //Todo:"추후에 사용자 입력값으로 바꿔야함 ModelAttribute 이런걸로"
+    //Todo:"state에 따라서 로그인 분기 doctor, user에 따라서 메서드 따로짤지 아니면 한메서드에 묶을지?"
     public String login(@Valid UserDTO userDto, RedirectAttributes RA, HttpSession session) {
 
         boolean u = userService.login(userDto);

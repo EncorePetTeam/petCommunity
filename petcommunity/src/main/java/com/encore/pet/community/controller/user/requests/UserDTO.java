@@ -20,6 +20,8 @@ public final class UserDTO {
     final private int state;
     final private String salt;
 
+
+
     //빌더
     @Builder
     public UserDTO(String id, String password, int state, String salt) {
