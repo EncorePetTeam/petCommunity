@@ -12,4 +12,11 @@ public class GeneralExceptionHandler {
     public ResponseEntity<String> handlePetNullpointerException(PetNullPointerException e){
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
     }
+
+    @ExceptionHandler({DBNotFoundException.class})
+    public ResponseEntity<String> handleDBNotFoundException(DBNotFoundException e){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+    }
+
+
 }
