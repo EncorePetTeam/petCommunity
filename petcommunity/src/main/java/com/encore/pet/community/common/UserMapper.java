@@ -6,7 +6,7 @@ import com.encore.pet.community.domain.user.User;
 public class UserMapper {
 
 
-    //dto -> entity
+    //UserDTO -> UserEntity
     public static User userDTOtoEntity(UserDTO userDto) {
         return User.builder().id(userDto.getId())
                 .password(userDto.getPassword())
@@ -16,7 +16,7 @@ public class UserMapper {
     }
 
 
-    // DTO -> Entity + salt적용
+    // UserDTO -> UserEntity + salt적용
     public static User afterEncryptEntity(UserDTO userDto, String afterEncryptPassword, String salt) {
         return User.builder().id(userDto.getId())
                 .password(afterEncryptPassword)
@@ -26,8 +26,8 @@ public class UserMapper {
     };
 
 
-    // Entity -> DTO
-    public static UserDTO EntityToDTO(User user){
+    // UserEntity -> UserDTO
+    public static UserDTO EntityToUserDTO(User user){
         return UserDTO.builder()
                 .id(user.getId())
                 .password(user.getPassword())
